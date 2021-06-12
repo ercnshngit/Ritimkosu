@@ -1,0 +1,27 @@
+[
+	{
+		"file": "C:\\\\Users\\\\ercan\\\\Documents\\\\Unreal Projects\\\\Ritimkosu\\\\Source\\\\Ritimkosu\\\\Ritimkosu.Build.cs",
+		"command": "cl.exe @\"C:\\Users\\ercan\\Documents\\Unreal Projects\\Ritimkosu\\.vscode\\compileCommands_Ritimkosu\\Ritimkosu.190.rsp\"",
+		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
+	},
+	{
+		"file": "C:\\\\Users\\\\ercan\\\\Documents\\\\Unreal Projects\\\\Ritimkosu\\\\Source\\\\Ritimkosu\\\\Ritimkosu.cpp",
+		"command": "cl.exe @\"C:\\Users\\ercan\\Documents\\Unreal Projects\\Ritimkosu\\.vscode\\compileCommands_Ritimkosu\\Ritimkosu.190.rsp\"",
+		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
+	},
+	{
+		"file": "C:\\\\Users\\\\ercan\\\\Documents\\\\Unreal Projects\\\\Ritimkosu\\\\Source\\\\Ritimkosu\\\\Ritimkosu.h",
+		"command": "cl.exe @\"C:\\Users\\ercan\\Documents\\Unreal Projects\\Ritimkosu\\.vscode\\compileCommands_Ritimkosu\\Ritimkosu.190.rsp\"",
+		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
+	},
+	{
+		"file": "C:\\\\Users\\\\ercan\\\\Documents\\\\Unreal Projects\\\\Ritimkosu\\\\Source\\\\Ritimkosu\\\\RitimkosuGameModeBase.cpp",
+		"command": "cl.exe @\"C:\\Users\\ercan\\Documents\\Unreal Projects\\Ritimkosu\\.vscode\\compileCommands_Ritimkosu\\Ritimkosu.190.rsp\"",
+		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
+	},
+	{
+		"file": "C:\\\\Users\\\\ercan\\\\Documents\\\\Unreal Projects\\\\Ritimkosu\\\\Source\\\\Ritimkosu\\\\RitimkosuGameModeBase.h",
+		"command": "cl.exe @\"C:\\Users\\ercan\\Documents\\Unreal Projects\\Ritimkosu\\.vscode\\compileCommands_Ritimkosu\\Ritimkosu.190.rsp\"",
+		"directory": "C:\\Program Files\\Epic Games\\UE_4.26\\Engine\\Source"
+	}
+]
