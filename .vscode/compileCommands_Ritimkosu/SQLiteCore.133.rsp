@@ -1,5 +1,5 @@
 -include "C:\Program Files\Epic Games\UE_4.26\Engine\Plugins\Runtime\Database\SQLiteCore\Intermediate\Build\Win64\UE4Editor\Development\SQLiteCore\Definitions.SQLiteCore.h"
--include "C:\Users\ercan\Documents\Unreal Projects\Ritimkosu\Intermediate\Build\Win64\RitimkosuEditor\Development\Core\SharedPCH.Core.ShadowErrors.NoUndef.h"
+-include "C:\Users\ercan\Documents\Unreal Projects\Git\Ritimkosu\Intermediate\Build\Win64\RitimkosuEditor\Development\Core\SharedPCH.Core.ShadowErrors.NoUndef.h"
 -I"C:\Program Files\Epic Games\UE_4.26\Engine\Source"
 -I"C:\Program Files\Epic Games\UE_4.26\Engine\Plugins\Runtime\Database\SQLiteCore\Source\SQLiteCore\Private"
 -I"C:\Program Files\Epic Games\UE_4.26\Engine\Plugins\Runtime\Database\SQLiteCore\Intermediate\Build\Win64\UE4Editor\Inc\SQLiteCore"

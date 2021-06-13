@@ -30,3 +30,13 @@ void ARitimTile::Tick(float DeltaTime)
 
 }
 
+void ARitimTile::ActivateTile() 
+{
+	ActivateTileBP();
+}
+
+void ARitimTile::DeactivateTile() 
+{
+	DeactivateTileBP();
+}
+

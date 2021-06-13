@@ -14,4 +14,8 @@ class RITIMKOSU_API ARitimkosuGameModeBase : public AGameModeBase
 {
 	GENERATED_BODY()
 	
+	public:
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Death")
+	bool bIsPlayerDeadRecently = false;
+
 };

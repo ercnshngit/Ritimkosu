@@ -11,6 +11,8 @@
 
 #include "PlayerCharacter.generated.h"
 
+class ARitimkosuGameModeBase;
+
 UCLASS()
 class RITIMKOSU_API APlayerCharacter : public ACharacter
 {
@@ -30,6 +32,9 @@ public:
 
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
+
+	ARitimkosuGameModeBase* GameMode = nullptr;
+
 
 	UFUNCTION()
 	void MoveForward(float Value);
@@ -78,6 +83,15 @@ public:
 
 	UPROPERTY(EditAnywhere)
 	float MaxRange = 10000;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Gun")
+	int32 Bullet = 0;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Sounds")
+	USoundBase* FireSound;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Sounds")
+	USoundBase* BosSound;
 
 	
 

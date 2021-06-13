@@ -4,6 +4,8 @@
 #include "PlayerCharacter.h"
 #include "GameFramework/CharacterMovementComponent.h"
 #include "Kismet/GameplayStatics.h"
+#include "RitimTile.h"
+#include "RitimkosuGameModeBase.h"
 
 // Sets default values
 APlayerCharacter::APlayerCharacter()
@@ -39,6 +41,18 @@ void APlayerCharacter::BeginPlay()
 
 	MovementPtr->MaxWalkSpeed = DefaultSpeed;
 
+	GameMode = Cast<ARitimkosuGameModeBase>(UGameplayStatics::GetGameMode(GetWorld()));
+
+	if(GameMode->bIsPlayerDeadRecently)
+	{
+		Bullet = 0;
+	}
+	else
+	{
+		Bullet = 2;
+	}
+	
+	
 	
 }
 
@@ -104,30 +118,58 @@ void APlayerCharacter::StopRun()
 
 void APlayerCharacter::PullTrigger() 
 {
+
+
+	if(Bullet >= 1)
+	{
+		
+		FVector Location;
+		FRotator Rotation;
+		GetWorld()->GetFirstPlayerController()->GetPlayerViewPoint(Location, Rotation);
+
+		FVector End = Location + Rotation.Vector() * MaxRange;
+
+
+		FHitResult Hit;
+		FCollisionQueryParams TraceParams = FCollisionQueryParams(FName(TEXT("Trace")), true, this);
+		ECollisionChannel Channel = ECC_WorldStatic;
+
+
+		bool bSuccess = GetWorld()->LineTraceSingleByChannel(Hit, Location, End, Channel, TraceParams);
+		if (bSuccess)
+		{
+
+			UGameplayStatics::SpawnEmitterAttached(MuzzleFlash, FPSMesh, TEXT("Muzzle"));
+			UGameplayStatics::PlaySound2D(GetWorld(), FireSound);
+
+
+			FRotator ShotDirection = Rotation.GetInverse();
+			UGameplayStatics::SpawnEmitterAtLocation(GetWorld(), ImpactEffect, Hit.Location, ShotDirection);
+
+			AActor* ActorHit = Hit.GetActor();
+
+			if(ActorHit->ActorHasTag(FName(TEXT("Ritim"))))
+			{	
+				Bullet -= 1;
+
+				ARitimTile* RitimTile = Cast<ARitimTile>(ActorHit);
+
+				RitimTile->ActivateTile();
+			}
+
+		}
+	}else{
+
+		UGameplayStatics::PlaySound2D(GetWorld(), BosSound);
+
+	}
+	
 	PullTriggerBP();
 
-	UE_LOG(LogTemp, Warning, TEXT("SHOOT"));
-	UGameplayStatics::SpawnEmitterAttached(MuzzleFlash, FPSMesh, TEXT("Muzzle"));
 	
 
-	FVector Location;
-	FRotator Rotation;
-	GetWorld()->GetFirstPlayerController()->GetPlayerViewPoint(Location, Rotation);
-
-	FVector End = Location + Rotation.Vector() * MaxRange;
 
 
-	FHitResult Hit;
-	FCollisionQueryParams TraceParams = FCollisionQueryParams(FName(TEXT("Trace")), true, this);
-	ECollisionChannel Channel = ECC_WorldStatic;
-
-
-	bool bSuccess = GetWorld()->LineTraceSingleByChannel(Hit, Location, End, Channel, TraceParams);
-	if (bSuccess)
-	{
-	 	FRotator ShotDirection = Rotation.GetInverse();
-		UGameplayStatics::SpawnEmitterAtLocation(GetWorld(), ImpactEffect, Hit.Location, ShotDirection);
-	}
 
 
 	// if(ActorHit->ActorHasTag(FName(TEXT("Paper"))))

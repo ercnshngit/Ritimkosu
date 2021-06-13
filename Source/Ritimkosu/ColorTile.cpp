@@ -30,3 +30,13 @@ void AColorTile::Tick(float DeltaTime)
 
 }
 
+void AColorTile::ActivateTile() 
+{
+	ActivateTileBP();
+}
+
+void AColorTile::DeactivateTile() 
+{
+	DeactivateTileBP();
+}
+

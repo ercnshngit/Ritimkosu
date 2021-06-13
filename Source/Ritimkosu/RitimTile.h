@@ -26,5 +26,19 @@ public:
 	UPROPERTY(VisibleDefaultsOnly, BlueprintReadWrite, Category = Mesh)
 	UStaticMeshComponent* RitimMesh;
 
+	UFUNCTION()
+	void ActivateTile();
+
+	UFUNCTION(BlueprintImplementableEvent)
+	void ActivateTileBP();
+
+	UFUNCTION()
+	void DeactivateTile();
+
+	UFUNCTION(BlueprintImplementableEvent)
+	void DeactivateTileBP();
+
+
+
 
 };

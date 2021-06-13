@@ -1,12 +1,9 @@
 {
-    "configurations": [
-        {
-            "name": "RitimkosuEditor Editor Win64 Development (Ritimkosu)",
-            "intelliSenseMode": "msvc-x64",
-            "compileCommands": "C:\\Users\\ercan\\Documents\\Unreal Projects\\Ritimkosu\\.vscode\\compileCommands_Ritimkosu.json",
-            "cStandard": "c17",
-            "cppStandard": "c++17"
-        }
-    ],
-    "version": 4
+	"configurations": [
+		{
+			"name": "RitimkosuEditor Editor Win64 Development (Ritimkosu)",
+			"intelliSenseMode": "msvc-x64",
+			"compileCommands": "C:\\Users\\ercan\\Documents\\Unreal Projects\\Git\\Ritimkosu\\.vscode\\compileCommands_Ritimkosu.json"
+		}
+	]
 }
